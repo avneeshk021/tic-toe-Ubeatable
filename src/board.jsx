@@ -50,28 +50,28 @@ class Board extends Component {
   game_over = (board = undefined) => {
     if (board === undefined) board = this.state.board;
 
-    // top-row
+    //  ye top-row
     if (board[0] === board[1] && board[1] === board[2]) {
      
       if (board[0] === "X") return -1;
       if (board[0] === "O") return +1;
     }
 
-    // mid-row
+    // ye mid-row
     if (board[3] === board[4] && board[4] === board[5]) {
      
       if (board[3] === "X") return -1;
       if (board[3] === "O") return +1;
     }
 
-    // last-row
+    // ye last-row
     if (board[6] === board[7] && board[7] === board[8]) {
    
       if (board[6] === "X") return -1;
       if (board[6] === "O") return +1;
     }
 
-    //  left-col
+    //  ye left-col
     if (board[0] === board[3] && board[3] === board[6]) {
     
       if (board[0] === "X") return -1;
@@ -85,14 +85,14 @@ class Board extends Component {
       if (board[1] === "O") return +1;
     }
 
-    // right-col
+    //  ye right-col
     if (board[2] === board[5] && board[5] === board[8]) {
       
       if (board[2] === "X") return -1;
       if (board[2] === "O") return +1;
     }
 
-    // main-diagonal
+    // ye main-diagonal
     if (board[0] === board[4] && board[4] === board[8]) {
       
       if (board[0] === "X") return -1;
@@ -118,7 +118,7 @@ class Board extends Component {
     if (score === +1) return { move: -1, score: +1 };
     if (score === -1) return { move: -1, score: -1 };
     if (score === "draw") return { move: -1, score: 0 };
-    // return { move: -1, score: isComputerTurn ? -Infinity : +Infinity };
+    
     if (depth === 0)
       return { move: undefined, score: isComputerTurn ? -Infinity : +Infinity };
 
